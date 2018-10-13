@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.tz.dao.RolePermissionMapper">
+
+    <resultMap id="rolePermission" type="cn.tz.domain.RolePermissionDO">
+        <result property="name" column="ACTION_NAME"/>
+        <result property="url" column="ACTION_PARAM"/>
+        <result property="role" column="ROLE_NAME"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="rolePermission">
+        select
+            ACTION_NAME, ACTION_PARAM, ROLE_NAME
+        from
+            tz_roles r, tz_action a, tz_role_action ra
+        where
+            r.ROLE_ID = ra.ROLE_ID and
+            a.ACTION_ID = ra.ACTION_ID
+    </select>
+</mapper>
