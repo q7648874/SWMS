@@ -8,7 +8,7 @@
   <properties>
         <!-- version of dependence -->
         <servlet.version>3.1.0</servlet.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <aopalliance.version>1.0</aopalliance.version>
         <aspectjweaver.version>1.8.0</aspectjweaver.version>
         <commons.fileuoload.version>1.3.1</commons.fileuoload.version>
